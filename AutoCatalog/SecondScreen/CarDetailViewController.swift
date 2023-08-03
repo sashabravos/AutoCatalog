@@ -27,11 +27,17 @@ class CarDetailViewController: UIViewController {
         return label
     }()
     
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.separatorStyle = .none
+        tableView.backgroundColor = .white
+        return tableView
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .white
+        setupTableView()
         setupNavigationBar()
         Task {
             await loadData()
@@ -45,16 +51,9 @@ class CarDetailViewController: UIViewController {
         do {
             let carId = chosenCar?.id ?? 0
             let carInfo: CarInfoDetail = try await RequestManager.shared.fetchCarDetailData(for: CarInfoDetail.self, with: carId)
-            print(carInfo.car.brandName, carInfo.user.username)
             
             let postArray = try await RequestManager.shared.fetchPosts(with: carId, page: currentPage)
-            for post in postArray {
-                print(post.text)
-                print(post.likeCount)
-                print(post.createdAt)
-                print(post.commentCount)
-                print(post.image)
-            }
+            appendPosts(postArray)
         } catch {
             handleError(error)
         }
@@ -65,11 +64,62 @@ class CarDetailViewController: UIViewController {
         isLoadingData = false
     }
     
+    private func appendPosts(_ newPosts: [PostData.Post]) {
+        posts.append(contentsOf: newPosts)
+        tableView.reloadData()
+        currentPage += 1
+        isLoadingData = false
+    }
+    
     private func setupNavigationBar() {
         navigationItem.titleView = titleLabel
         titleLabel.text = "\(chosenCar?.name ?? "Car's name")"
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.barTintColor = Colors.veryLightBlue
     }
+    
+    private func setupTableView() {
+        view.addSubview(tableView)
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.prefetchDataSource = self
+        
+        tableView.register(CarCell.self, forCellReuseIdentifier: CarCell.identifier)
+        
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
+    }
 }
 
+extension CarDetailViewController: UITableViewDelegate, UITableViewDataSource, UITableViewDataSourcePrefetching {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return posts.count
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = PostCell()
+        let post = posts[indexPath.row]
+        let imageURL = URL(string: post.image)!
+        cell.configure(imageURL: imageURL, text: post.text,
+                       comments: post.commentCount,
+                       likes: post.likeCount, date: post.createdAt)
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        if let lastIndexPath = indexPaths.last,
+           lastIndexPath.row == posts.count - 1 {
+            Task {
+                await loadData()
+            }
+        }
+    }
+}

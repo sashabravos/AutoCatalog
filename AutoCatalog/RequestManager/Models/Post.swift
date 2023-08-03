@@ -13,7 +13,7 @@ struct PostData: Codable {
         let likeCount: Int
         let createdAt: String
         let commentCount: Int
-        let image: URL
+        let image: String
         
         enum CodingKeys: String, CodingKey {
             case text
