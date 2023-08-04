@@ -10,11 +10,13 @@
 		032F47882A7BA48D008404E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F47872A7BA48D008404E3 /* AppDelegate.swift */; };
 		032F478A2A7BA48D008404E3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F47892A7BA48D008404E3 /* SceneDelegate.swift */; };
 		032F478C2A7BA48D008404E3 /* CarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F478B2A7BA48D008404E3 /* CarsViewController.swift */; };
-		032F478F2A7BA48D008404E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 032F478D2A7BA48D008404E3 /* Main.storyboard */; };
 		032F47912A7BA48F008404E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 032F47902A7BA48F008404E3 /* Assets.xcassets */; };
 		032F47942A7BA48F008404E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 032F47922A7BA48F008404E3 /* LaunchScreen.storyboard */; };
 		032F479D2A7BA8B0008404E3 /* CarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F479C2A7BA8B0008404E3 /* CarModel.swift */; };
 		032F47A12A7BAD49008404E3 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F47A02A7BAD49008404E3 /* RequestManager.swift */; };
+		032F47A82A7BB451008404E3 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 032F47A72A7BB451008404E3 /* Kingfisher */; };
+		032F47AA2A7BB461008404E3 /* CarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F47A92A7BB461008404E3 /* CarCell.swift */; };
+		032F47AE2A7BB756008404E3 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F47AD2A7BB756008404E3 /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,12 +24,13 @@
 		032F47872A7BA48D008404E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		032F47892A7BA48D008404E3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		032F478B2A7BA48D008404E3 /* CarsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsViewController.swift; sourceTree = "<group>"; };
-		032F478E2A7BA48D008404E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		032F47902A7BA48F008404E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		032F47932A7BA48F008404E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		032F47952A7BA48F008404E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		032F479C2A7BA8B0008404E3 /* CarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarModel.swift; sourceTree = "<group>"; };
 		032F47A02A7BAD49008404E3 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		032F47A92A7BB461008404E3 /* CarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarCell.swift; sourceTree = "<group>"; };
+		032F47AD2A7BB756008404E3 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				032F47A82A7BB451008404E3 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,11 +66,10 @@
 			children = (
 				032F47872A7BA48D008404E3 /* AppDelegate.swift */,
 				032F47892A7BA48D008404E3 /* SceneDelegate.swift */,
-				032F478B2A7BA48D008404E3 /* CarsViewController.swift */,
+				032F47A22A7BB387008404E3 /* FirstScreen */,
 				032F479B2A7BA892008404E3 /* RequestManager */,
-				032F478D2A7BA48D008404E3 /* Main.storyboard */,
-				032F47902A7BA48F008404E3 /* Assets.xcassets */,
-				032F47922A7BA48F008404E3 /* LaunchScreen.storyboard */,
+				032F47AC2A7BB728008404E3 /* Assets */,
+				032F47AB2A7BB650008404E3 /* Storyboards */,
 				032F47952A7BA48F008404E3 /* Info.plist */,
 			);
 			path = AutoCatalog;
@@ -75,10 +78,44 @@
 		032F479B2A7BA892008404E3 /* RequestManager */ = {
 			isa = PBXGroup;
 			children = (
-				032F479C2A7BA8B0008404E3 /* CarModel.swift */,
+				032F47A42A7BB3FB008404E3 /* Models */,
 				032F47A02A7BAD49008404E3 /* RequestManager.swift */,
 			);
 			path = RequestManager;
+			sourceTree = "<group>";
+		};
+		032F47A22A7BB387008404E3 /* FirstScreen */ = {
+			isa = PBXGroup;
+			children = (
+				032F47A92A7BB461008404E3 /* CarCell.swift */,
+				032F478B2A7BA48D008404E3 /* CarsViewController.swift */,
+			);
+			path = FirstScreen;
+			sourceTree = "<group>";
+		};
+		032F47A42A7BB3FB008404E3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				032F479C2A7BA8B0008404E3 /* CarModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		032F47AB2A7BB650008404E3 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				032F47922A7BA48F008404E3 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		032F47AC2A7BB728008404E3 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				032F47902A7BA48F008404E3 /* Assets.xcassets */,
+				032F47AD2A7BB756008404E3 /* Colors.swift */,
+			);
+			path = Assets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -97,6 +134,9 @@
 			dependencies = (
 			);
 			name = AutoCatalog;
+			packageProductDependencies = (
+				032F47A72A7BB451008404E3 /* Kingfisher */,
+			);
 			productName = AutoCatalog;
 			productReference = 032F47842A7BA48D008404E3 /* AutoCatalog.app */;
 			productType = "com.apple.product-type.application";
@@ -125,6 +165,9 @@
 				Base,
 			);
 			mainGroup = 032F477B2A7BA48D008404E3;
+			packageReferences = (
+				032F47A62A7BB451008404E3 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 032F47852A7BA48D008404E3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -141,7 +184,6 @@
 			files = (
 				032F47942A7BA48F008404E3 /* LaunchScreen.storyboard in Resources */,
 				032F47912A7BA48F008404E3 /* Assets.xcassets in Resources */,
-				032F478F2A7BA48D008404E3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,8 +194,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				032F47AA2A7BB461008404E3 /* CarCell.swift in Sources */,
 				032F47A12A7BAD49008404E3 /* RequestManager.swift in Sources */,
 				032F479D2A7BA8B0008404E3 /* CarModel.swift in Sources */,
+				032F47AE2A7BB756008404E3 /* Colors.swift in Sources */,
 				032F478C2A7BA48D008404E3 /* CarsViewController.swift in Sources */,
 				032F47882A7BA48D008404E3 /* AppDelegate.swift in Sources */,
 				032F478A2A7BA48D008404E3 /* SceneDelegate.swift in Sources */,
@@ -163,14 +207,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		032F478D2A7BA48D008404E3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				032F478E2A7BA48D008404E3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		032F47922A7BA48F008404E3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -308,7 +344,6 @@
 				INFOPLIST_FILE = AutoCatalog/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -336,7 +371,6 @@
 				INFOPLIST_FILE = AutoCatalog/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -374,6 +408,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		032F47A62A7BB451008404E3 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		032F47A72A7BB451008404E3 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 032F47A62A7BB451008404E3 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 032F477C2A7BA48D008404E3 /* Project object */;
 }
