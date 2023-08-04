@@ -18,9 +18,9 @@ class CarDetailViewController: UIViewController {
     
     var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 24, weight: .semibold)
+        label.font = UIFont.systemFont(ofSize: FontSizes.mainTitle, weight: .semibold)
         label.adjustsFontSizeToFitWidth = true
-        label.minimumScaleFactor = 0.5
+        label.minimumScaleFactor = FontSizes.scaleFactor
         label.numberOfLines = 1
         label.textAlignment = .center
         label.textColor = .black
@@ -36,7 +36,7 @@ class CarDetailViewController: UIViewController {
     
     private lazy var carHeaderView: CarHeaderView = {
         let header = CarHeaderView()
-        header.layer.cornerRadius = 10
+        header.layer.cornerRadius = Layers.standartCornerRadius
         header.backgroundColor = Colors.veryLightGray
         return header
     }()
@@ -93,7 +93,7 @@ class CarDetailViewController: UIViewController {
         tableView.prefetchDataSource = self
         
         tableView.tableHeaderView = carHeaderView
-        tableView.contentInset.top = 100
+        tableView.contentInset.top = Constraints.topInset
         tableView.contentInsetAdjustmentBehavior = .never
         
         tableView.register(CarCell.self, forCellReuseIdentifier: CarCell.identifier)
@@ -106,7 +106,7 @@ class CarDetailViewController: UIViewController {
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             
-            carHeaderView.heightAnchor.constraint(equalToConstant: 350),
+            carHeaderView.heightAnchor.constraint(equalToConstant: Constraints.headerViewHeight),
             carHeaderView.widthAnchor.constraint(equalTo: tableView.widthAnchor)
         ])
     }

@@ -10,6 +10,11 @@ import Kingfisher
 
 class PostCell: UITableViewCell {
         
+    private let indent = Constraints.standardIndent
+    private let smallIndent = Constraints.midIndent
+    private let imageHeight = Constraints.carImageSize
+    private let bottomIndent = Constraints.bottomIndent
+    
     private let postImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
@@ -19,26 +24,26 @@ class PostCell: UITableViewCell {
     
     private let postLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 16)
+        label.font = UIFont.systemFont(ofSize: FontSizes.postText)
         label.numberOfLines = 2
         return label
     }()
     
     private let likeCountLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 15)
+        label.font = UIFont.systemFont(ofSize: FontSizes.commentsAndLikes)
         return label
     }()
     
     private let commentCountLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 15)
+        label.font = UIFont.systemFont(ofSize: FontSizes.commentsAndLikes)
         return label
     }()
     
     private let createdAtLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14)
+        label.font = UIFont.systemFont(ofSize: FontSizes.date)
         label.textColor = .gray
         return label
     }()
@@ -60,25 +65,25 @@ class PostCell: UITableViewCell {
         }
         
         NSLayoutConstraint.activate([
-            postImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
+            postImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: smallIndent),
             postImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             postImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            postImageView.heightAnchor.constraint(equalToConstant: 250),
+            postImageView.heightAnchor.constraint(equalToConstant: imageHeight),
 
-            likeCountLabel.topAnchor.constraint(equalTo: postImageView.bottomAnchor, constant: 8),
-            likeCountLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
-            likeCountLabel.trailingAnchor.constraint(equalTo: commentCountLabel.leadingAnchor, constant: -10),
+            likeCountLabel.topAnchor.constraint(equalTo: postImageView.bottomAnchor, constant: smallIndent),
+            likeCountLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: smallIndent),
+            likeCountLabel.trailingAnchor.constraint(equalTo: commentCountLabel.leadingAnchor, constant: -indent),
 
-            commentCountLabel.topAnchor.constraint(equalTo: postImageView.bottomAnchor, constant: 8),
-            commentCountLabel.leadingAnchor.constraint(equalTo: likeCountLabel.trailingAnchor, constant: 10),
+            commentCountLabel.topAnchor.constraint(equalTo: postImageView.bottomAnchor, constant: smallIndent),
+            commentCountLabel.leadingAnchor.constraint(equalTo: likeCountLabel.trailingAnchor, constant: indent),
             
-            createdAtLabel.topAnchor.constraint(equalTo: postImageView.bottomAnchor, constant: 8),
-            createdAtLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
+            createdAtLabel.topAnchor.constraint(equalTo: postImageView.bottomAnchor, constant: smallIndent),
+            createdAtLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -smallIndent),
             
-            postLabel.topAnchor.constraint(equalTo: likeCountLabel.bottomAnchor, constant: 8),
-            postLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
-            postLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
-            postLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20)
+            postLabel.topAnchor.constraint(equalTo: likeCountLabel.bottomAnchor, constant: smallIndent),
+            postLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: smallIndent),
+            postLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -smallIndent),
+            postLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -bottomIndent)
         ])
     }
         
