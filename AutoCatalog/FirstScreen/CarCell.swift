@@ -52,7 +52,7 @@ final class CarCell: UITableViewCell {
         contentView.addSubview(stackView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
-        let imageHeightConstraint = cardImage.heightAnchor.constraint(equalToConstant: 300)
+        let imageHeightConstraint = cardImage.heightAnchor.constraint(equalToConstant: 250)
         imageHeightConstraint.priority = .defaultHigh
         
         NSLayoutConstraint.activate([
@@ -64,13 +64,13 @@ final class CarCell: UITableViewCell {
             imageHeightConstraint,
             cardImage.widthAnchor.constraint(equalTo: stackView.widthAnchor),
 
-            titleLabel.heightAnchor.constraint(equalToConstant: 30)
+            titleLabel.heightAnchor.constraint(equalToConstant: 40)
         ])
     }
     
     public func configure(imageURL: URL?, title: String) {
         self.selectionStyle = .none
-        self.backgroundColor = Colors.veryLightBlue
+        self.backgroundColor = Colors.veryLightGray
         
         titleLabel.text = title
         

@@ -9,14 +9,14 @@ import UIKit
 
 class CarsViewController: UIViewController {
     
-    private lazy var cars: [Car] = []
+    private lazy var cars: [CarInfo] = []
     private lazy var currentPage = 1
     private lazy var isLoadingData = false
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.separatorStyle = .none
-        tableView.backgroundColor = Colors.veryLightBlue
+        tableView.backgroundColor = Colors.veryLightGray
         return tableView
     }()
     
@@ -48,7 +48,7 @@ class CarsViewController: UIViewController {
         isLoadingData = false
     }
     
-    private func appendCars(_ newCars: [Car]) {
+    private func appendCars(_ newCars: [CarInfo]) {
         cars.append(contentsOf: newCars)
         tableView.reloadData()
         currentPage += 1
@@ -58,7 +58,7 @@ class CarsViewController: UIViewController {
     private func setupNavigationBar() {
         self.title = "Auto Catalog 🚗"
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.barTintColor = Colors.veryLightBlue
+        navigationController?.navigationBar.barTintColor = Colors.veryLightGray
     }
     
     private func setupTableView() {
@@ -97,7 +97,9 @@ extension CarsViewController: UITableViewDelegate, UITableViewDataSource, UITabl
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let chosenCar = cars[indexPath.row]
-        print(chosenCar.name)
+        let detailViewController = CarDetailViewController()
+        detailViewController.chosenCar = chosenCar
+        navigationController?.pushViewController(detailViewController, animated: true)
     }
     
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
