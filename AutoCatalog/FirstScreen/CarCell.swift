@@ -70,7 +70,7 @@ final class CarCell: UITableViewCell {
     
     public func configure(imageURL: URL?, title: String) {
         self.selectionStyle = .none
-        self.backgroundColor = Colors.veryLightBlue
+        self.backgroundColor = Colors.veryLightGray
         
         titleLabel.text = title
         

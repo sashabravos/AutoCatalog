@@ -16,7 +16,7 @@ class CarsViewController: UIViewController {
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.separatorStyle = .none
-        tableView.backgroundColor = Colors.veryLightBlue
+        tableView.backgroundColor = Colors.veryLightGray
         return tableView
     }()
     
@@ -58,7 +58,7 @@ class CarsViewController: UIViewController {
     private func setupNavigationBar() {
         self.title = "Auto Catalog 🚗"
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.barTintColor = Colors.veryLightBlue
+        navigationController?.navigationBar.barTintColor = Colors.veryLightGray
     }
     
     private func setupTableView() {

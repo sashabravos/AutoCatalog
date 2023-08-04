@@ -15,13 +15,18 @@ struct CarInfoDetail: Codable {
         let modelName: String
         let year: Int
         let transmissionName: String
+        let images: [CarImages]
         let engine: String
         
         enum CodingKeys: String, CodingKey {
-            case id, year, engine
+            case id, year, images, engine
             case brandName = "brand_name"
             case modelName = "model_name"
             case transmissionName = "transmission_name"
+        }
+        
+        struct CarImages: Codable {
+            let url: String
         }
     }
     
@@ -33,7 +38,7 @@ struct CarInfoDetail: Codable {
 
         struct Avatar: Codable {
             let path: String
-            let url: URL
+            let url: String
         }
 
     let car: Car

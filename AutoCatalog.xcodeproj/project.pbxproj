@@ -21,6 +21,8 @@
 		032F47BB2A7BE673008404E3 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F47BA2A7BE673008404E3 /* Post.swift */; };
 		032F47BD2A7BE683008404E3 /* CarInfoDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F47BC2A7BE683008404E3 /* CarInfoDetail.swift */; };
 		032F47BF2A7C04D9008404E3 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F47BE2A7C04D9008404E3 /* PostCell.swift */; };
+		032F47C12A7C3E31008404E3 /* CarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F47C02A7C3E31008404E3 /* CarHeaderView.swift */; };
+		032F47C32A7CFE5C008404E3 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F47C22A7CFE5C008404E3 /* Constraints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		032F47BA2A7BE673008404E3 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		032F47BC2A7BE683008404E3 /* CarInfoDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarInfoDetail.swift; sourceTree = "<group>"; };
 		032F47BE2A7C04D9008404E3 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		032F47C02A7C3E31008404E3 /* CarHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarHeaderView.swift; sourceTree = "<group>"; };
+		032F47C22A7CFE5C008404E3 /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +128,7 @@
 			children = (
 				032F47902A7BA48F008404E3 /* Assets.xcassets */,
 				032F47AD2A7BB756008404E3 /* Colors.swift */,
+				032F47C22A7CFE5C008404E3 /* Constraints.swift */,
 				032F47AB2A7BB650008404E3 /* Storyboards */,
 			);
 			path = SupportFiles;
@@ -133,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				032F47BE2A7C04D9008404E3 /* PostCell.swift */,
+				032F47C02A7C3E31008404E3 /* CarHeaderView.swift */,
 				032F47B22A7BC05D008404E3 /* CarDetailViewController.swift */,
 			);
 			path = SecondScreen;
@@ -221,7 +227,9 @@
 				032F478C2A7BA48D008404E3 /* CarsViewController.swift in Sources */,
 				032F47BD2A7BE683008404E3 /* CarInfoDetail.swift in Sources */,
 				032F47882A7BA48D008404E3 /* AppDelegate.swift in Sources */,
+				032F47C12A7C3E31008404E3 /* CarHeaderView.swift in Sources */,
 				032F47B92A7BE075008404E3 /* CarInfo.swift in Sources */,
+				032F47C32A7CFE5C008404E3 /* Constraints.swift in Sources */,
 				032F47BF2A7C04D9008404E3 /* PostCell.swift in Sources */,
 				032F478A2A7BA48D008404E3 /* SceneDelegate.swift in Sources */,
 				032F47BB2A7BE673008404E3 /* Post.swift in Sources */,

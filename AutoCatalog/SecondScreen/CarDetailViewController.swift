@@ -18,7 +18,7 @@ class CarDetailViewController: UIViewController {
     
     var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 24, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: 24, weight: .semibold)
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.5
         label.numberOfLines = 1
@@ -32,6 +32,13 @@ class CarDetailViewController: UIViewController {
         tableView.separatorStyle = .none
         tableView.backgroundColor = .white
         return tableView
+    }()
+    
+    private lazy var carHeaderView: CarHeaderView = {
+        let header = CarHeaderView()
+        header.layer.cornerRadius = 10
+        header.backgroundColor = Colors.veryLightGray
+        return header
     }()
     
     override func viewDidLoad() {
@@ -51,6 +58,7 @@ class CarDetailViewController: UIViewController {
         do {
             let carId = chosenCar?.id ?? 0
             let carInfo: CarInfoDetail = try await RequestManager.shared.fetchCarDetailData(for: CarInfoDetail.self, with: carId)
+            carHeaderView.configureHeaderView(carData: carInfo)
             
             let postArray = try await RequestManager.shared.fetchPosts(with: carId, page: currentPage)
             appendPosts(postArray)
@@ -74,25 +82,32 @@ class CarDetailViewController: UIViewController {
     private func setupNavigationBar() {
         navigationItem.titleView = titleLabel
         titleLabel.text = "\(chosenCar?.name ?? "Car's name")"
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.barTintColor = Colors.veryLightBlue
+        navigationController?.navigationBar.barTintColor = Colors.veryLightGray
     }
     
     private func setupTableView() {
         view.addSubview(tableView)
-        
+                
         tableView.delegate = self
         tableView.dataSource = self
         tableView.prefetchDataSource = self
         
+        tableView.tableHeaderView = carHeaderView
+        tableView.contentInset.top = 100
+        tableView.contentInsetAdjustmentBehavior = .never
+        
         tableView.register(CarCell.self, forCellReuseIdentifier: CarCell.identifier)
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
+        carHeaderView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            
+            carHeaderView.heightAnchor.constraint(equalToConstant: 350),
+            carHeaderView.widthAnchor.constraint(equalTo: tableView.widthAnchor)
         ])
     }
 }
@@ -101,7 +116,6 @@ extension CarDetailViewController: UITableViewDelegate, UITableViewDataSource, U
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

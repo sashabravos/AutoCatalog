@@ -85,7 +85,6 @@ class PostCell: UITableViewCell {
     public func configure(imageURL: URL?,
                           text: String, comments: Int,
                           likes: Int, date: String) {
-        self.layer.cornerRadius = 10.0
         self.selectionStyle = .none
         self.backgroundColor = .white
         
