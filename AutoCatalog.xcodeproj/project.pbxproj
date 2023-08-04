@@ -23,6 +23,8 @@
 		032F47BF2A7C04D9008404E3 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F47BE2A7C04D9008404E3 /* PostCell.swift */; };
 		032F47C12A7C3E31008404E3 /* CarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F47C02A7C3E31008404E3 /* CarHeaderView.swift */; };
 		032F47C32A7CFE5C008404E3 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F47C22A7CFE5C008404E3 /* Constraints.swift */; };
+		032F47C62A7D1498008404E3 /* Layers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F47C52A7D1498008404E3 /* Layers.swift */; };
+		032F47C82A7D14BA008404E3 /* FontSizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 032F47C72A7D14BA008404E3 /* FontSizes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		032F47BE2A7C04D9008404E3 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		032F47C02A7C3E31008404E3 /* CarHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarHeaderView.swift; sourceTree = "<group>"; };
 		032F47C22A7CFE5C008404E3 /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
+		032F47C52A7D1498008404E3 /* Layers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layers.swift; sourceTree = "<group>"; };
+		032F47C72A7D14BA008404E3 /* FontSizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSizes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,7 @@
 				032F47A22A7BB387008404E3 /* FirstScreen */,
 				032F47B12A7BC027008404E3 /* SecondScreen */,
 				032F479B2A7BA892008404E3 /* RequestManager */,
+				032F47C42A7D1437008404E3 /* Constants */,
 				032F47AC2A7BB728008404E3 /* SupportFiles */,
 				032F47952A7BA48F008404E3 /* Info.plist */,
 			);
@@ -127,8 +132,6 @@
 			isa = PBXGroup;
 			children = (
 				032F47902A7BA48F008404E3 /* Assets.xcassets */,
-				032F47AD2A7BB756008404E3 /* Colors.swift */,
-				032F47C22A7CFE5C008404E3 /* Constraints.swift */,
 				032F47AB2A7BB650008404E3 /* Storyboards */,
 			);
 			path = SupportFiles;
@@ -142,6 +145,17 @@
 				032F47B22A7BC05D008404E3 /* CarDetailViewController.swift */,
 			);
 			path = SecondScreen;
+			sourceTree = "<group>";
+		};
+		032F47C42A7D1437008404E3 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				032F47AD2A7BB756008404E3 /* Colors.swift */,
+				032F47C72A7D14BA008404E3 /* FontSizes.swift */,
+				032F47C52A7D1498008404E3 /* Layers.swift */,
+				032F47C22A7CFE5C008404E3 /* Constraints.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				032F47AA2A7BB461008404E3 /* CarCell.swift in Sources */,
+				032F47C82A7D14BA008404E3 /* FontSizes.swift in Sources */,
 				032F47A12A7BAD49008404E3 /* RequestManager.swift in Sources */,
 				032F47B32A7BC05D008404E3 /* CarDetailViewController.swift in Sources */,
 				032F47AE2A7BB756008404E3 /* Colors.swift in Sources */,
@@ -233,6 +248,7 @@
 				032F47BF2A7C04D9008404E3 /* PostCell.swift in Sources */,
 				032F478A2A7BA48D008404E3 /* SceneDelegate.swift in Sources */,
 				032F47BB2A7BE673008404E3 /* Post.swift in Sources */,
+				032F47C62A7D1498008404E3 /* Layers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
