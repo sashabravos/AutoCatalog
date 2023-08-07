@@ -96,7 +96,7 @@ class CarDetailViewController: UIViewController {
         tableView.contentInset.top = Constraints.topInset
         tableView.contentInsetAdjustmentBehavior = .never
         
-        tableView.register(CarCell.self, forCellReuseIdentifier: CarCell.identifier)
+        tableView.register(PostCell.self, forCellReuseIdentifier: PostCell.identifier)
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
         carHeaderView.translatesAutoresizingMaskIntoConstraints = false
@@ -119,7 +119,8 @@ extension CarDetailViewController: UITableViewDelegate, UITableViewDataSource, U
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = PostCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: PostCell.identifier,
+                                                 for: indexPath) as! PostCell
         let post = posts[indexPath.row]
         let imageURL = URL(string: post.image)!
         cell.configure(imageURL: imageURL, text: post.text,

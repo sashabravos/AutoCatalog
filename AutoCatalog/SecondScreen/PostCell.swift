@@ -10,6 +10,8 @@ import Kingfisher
 
 class PostCell: UITableViewCell {
         
+    static let identifier = "PostCell"
+
     private let indent = Constraints.standardIndent
     private let smallIndent = Constraints.midIndent
     private let imageHeight = Constraints.carImageSize

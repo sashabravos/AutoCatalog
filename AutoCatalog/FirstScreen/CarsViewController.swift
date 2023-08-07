@@ -88,7 +88,8 @@ extension CarsViewController: UITableViewDelegate, UITableViewDataSource, UITabl
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = CarCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: CarCell.identifier,
+                                                 for: indexPath) as! CarCell
         let car = cars[indexPath.row]
         let imageURL = URL(string: car.image)!
         cell.configure(imageURL: imageURL, title: car.name)
